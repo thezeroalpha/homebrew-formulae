@@ -1,5 +1,5 @@
 class Conf < Formula
-  desc "conf - a dotfiles manager written in Perl"
+  desc "Simple dotfiles manager written in Perl"
   homepage "https://github.com/thezeroalpha/conf"
   url "https://github.com/thezeroalpha/conf/archive/1.0.1.tar.gz"
   sha256 "efdf90192e213c7382f42d3bd78113e4c1f010a4df4d3eaab52e330b478beaec"
@@ -12,15 +12,44 @@ class Conf < Formula
   end
 
   test do
-    # `test do` will create, run in and delete a temporary directory.
-    #
-    # This test will fail and we won't accept that! For Homebrew/homebrew-core
-    # this will need to be a test that verifies the functionality of the
-    # software. Run the test with `brew test conf`. Options passed
-    # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
-    #
-    # The installed folder is not in the path, so use the entire path to any
-    # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "false"
+    # Tests basic linking functions
+    dotfiles = testpath/"dotfiles"
+    dotfiles.mkpath
+    ENV["DOTFILES"] = dotfiles
+
+    (dotfiles/"dot.map").write <<~YEET
+      vim:
+        - vimrc: ~/.vimrc
+        - autoload/whatever.vim: ~/.vim/autoload/whatever.vim
+
+      # This is a comment, shouldn't be interpreted
+      lf: ~/.config/lf
+    YEET
+    vimrc_content = "syntax on"
+    (dotfiles/"vim/vimrc").write(vimrc_content)
+    autoload_content = "colorscheme junipero"
+    (dotfiles/"vim/autoload/whatever.vim").write(autoload_content)
+    lfrc_content = "set scrolloff 10"
+    (dotfiles/"lf/lfrc").write(lfrc_content)
+
+    system "yes | #{bin}/conf link"
+    assert_equal vimrc_content, (testpath/".vimrc").read
+    assert_equal autoload_content, (testpath/".vim/autoload/whatever.vim").read
+    assert_equal lfrc_content, (testpath/".config/lf/lfrc").read
+
+    # Test basic unlinking functions
+    output = shell_output("#{bin}/conf unlink vim/vimrc")
+    expected_output = <<~YEET
+      Removing link: #{ENV['HOME']}/.vimrc
+    YEET
+    assert_equal expected_output, output
+    refute_predicate (testpath/'.vimrc'), :exist?
+
+    # Check link checking functionality
+    output = shell_output("#{bin}/conf check")
+    expected_output_slice = <<~YEET
+      [ XX ] vim/vimrc is not linked.
+    YEET
+    assert_include output, expected_output_slice
   end
 end
