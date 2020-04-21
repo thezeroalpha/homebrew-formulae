@@ -9,6 +9,7 @@ class Conf < Formula
   def install
     bin.install "conf"
     man1.install "conf.1"
+    zsh_completion.install "conf.zsh" => "_conf"
   end
 
   test do
