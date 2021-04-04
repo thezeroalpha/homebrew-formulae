@@ -1,9 +1,9 @@
 class Gocket < Formula
   desc "CLI / TUI for Pocket"
   homepage "https://github.com/Phantas0s/gocket"
-  url "https://github.com/Phantas0s/gocket/releases/download/v0.2.2/gocket_0.2.2_Darwin_x86_64.tar.gz"
-  sha256 "fd9b8e5437cc332b17076b3c43b2f235311491aa1a11a28154248a11f1359d84"
-  version "0.2.2"
+  url "https://github.com/Phantas0s/gocket/releases/download/v0.2.3/gocket_0.2.3_Darwin_x86_64.tar.gz"
+  sha256 "552f8654f29066488bd6f6ca7d89f477f19aa545ed81d7f94747c10c6512034c"
+  version "0.2.3"
 
   def install
     bin.install "gocket"
