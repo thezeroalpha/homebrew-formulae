@@ -1,8 +1,8 @@
 class Conf < Formula
   desc "Simple dotfiles manager written in Perl"
   homepage "https://github.com/thezeroalpha/conf"
-  url "https://github.com/thezeroalpha/conf/archive/1.0.4.tar.gz"
-  sha256 "50bc4f3d7ef91f6b28cf41f81bb379f11d3c8b7689d80fc313417a1abf2d0f62"
+  url "https://github.com/thezeroalpha/conf/archive/v1.0.5.tar.gz"
+  sha256 "c684bec6df7e01aa425de01e128a66404aa4ce5dad48a6c98da7617f6326119b"
 
   depends_on "perl"
 
