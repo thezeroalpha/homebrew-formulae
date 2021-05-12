@@ -1,8 +1,8 @@
 class Radio < Formula
   desc "Command-line internet radio player"
   homepage "https://github.com/thezeroalpha/radio"
-  url "https://github.com/thezeroalpha/radio/archive/v1.1.1.tar.gz"
-  sha256 "57e36ff00ac8726dd53a7b550aa4aae5749521074205b97cda1bd0bfec7c72a7"
+  url "https://github.com/thezeroalpha/radio/archive/v1.1.2.tar.gz"
+  sha256 "2431f9db9deb731098889bc1857d05f023dcb23d7d4124513d7206e16b701222"
 
   uses_from_macos "ruby" => "2.7"
 
