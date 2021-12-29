@@ -14,12 +14,12 @@ class Gocket < Formula
   test do
     require "open3"
     output = shell_output("#{bin}/gocket list 2&>1", 1)
-    assert_include "List your Pocket pages", output
-    assert_include "You need a pocket consumer key", output
+    assert_includes "List your Pocket pages", output
+    assert_includes "You need a pocket consumer key", output
 
     Open3.popen3("#{bin}/gocket -k 'nonexistent' list") do |*, stderr, wait_thr|
       assert_equal wait_thr.value.exitstatus, 2
-      assert_include stderr.read, "Invalid consumer key"
+      assert_includes stderr.read, "Invalid consumer key"
     end
   end
 end

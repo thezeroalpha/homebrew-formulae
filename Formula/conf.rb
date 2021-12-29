@@ -51,6 +51,6 @@ class Conf < Formula
     expected_output_slice = <<~YEET
       [ XX ] vim/vimrc is not linked.
     YEET
-    assert_include output, expected_output_slice
+    assert_includes output, expected_output_slice
   end
 end

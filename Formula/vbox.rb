@@ -12,6 +12,6 @@ class Vbox < Formula
 
   test do
     output = shell_output("#{bin}/vbox -h")
-    assert_include output, "list, ls"
+    assert_includes output, "list, ls"
   end
 end

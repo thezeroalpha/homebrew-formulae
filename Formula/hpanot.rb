@@ -12,6 +12,6 @@ class Hpanot < Formula
 
   test do
     # TODO: add an actual test
-    assert_include shell_output("#{bin}/hpanot -h"), "Usage:"
+    assert_includes shell_output("#{bin}/hpanot -h"), "Usage:"
   end
 end
