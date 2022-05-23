@@ -6,6 +6,10 @@ class Radio < Formula
 
   uses_from_macos "ruby" => "2.7"
 
+  head do
+    url "https://github.com/thezeroalpha/radio.git", branch: "master"
+  end
+
   def install
     bin.install "radio"
     (etc/"radio").mkpath
