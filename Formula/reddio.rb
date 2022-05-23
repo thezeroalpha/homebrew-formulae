@@ -1,7 +1,7 @@
 class Reddio < Formula
-  desc "A command-line interface for Reddit written in POSIX sh"
-  homepage "https://gitlab.com/aaronNG/reddio"
-  head "https://gitlab.com/aaronNG/reddio.git", using: :git
+  desc 'A command-line interface for Reddit written in POSIX sh'
+  homepage 'https://gitlab.com/aaronNG/reddio'
+  head 'https://gitlab.com/aaronNG/reddio.git', using: :git, branch: 'master'
 
   def install
     system 'make', 'install', "PREFIX=#{prefix}"

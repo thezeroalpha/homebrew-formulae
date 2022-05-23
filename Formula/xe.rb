@@ -1,14 +1,14 @@
 class Xe < Formula
-  desc "Currency converter for xe.com"
-  homepage "https://github.com/thezeroalpha/xe"
+  desc 'Currency converter for xe.com'
+  homepage 'https://github.com/thezeroalpha/xe'
 
   head do
-    url "https://github.com/thezeroalpha/xe.git", branch: "master"
-    depends_on "go@1.18" => :build
+    url 'https://github.com/thezeroalpha/xe.git', branch: 'master'
+    depends_on 'go@1.18' => :build
   end
 
   def install
-    system "go", "build", *std_go_args
+    system 'go', 'build', *std_go_args
   end
 
   test do
