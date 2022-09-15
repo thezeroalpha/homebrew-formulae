@@ -1,6 +1,6 @@
 cask 'spotube' do
-  version '2.4.0'
-  sha256 'ae89c0de329d94ec05784e624763e77fb32b7dcc58b646f58d21579b7d4cb387'
+  version '2.4.1'
+  sha256 '1707ce61f18d52ea449ed59760ae5411f9729d8664872fd49762c8faeeef983d'
 
   url "https://github.com/KRTirtho/spotube/releases/download/v#{version}/Spotube-macos-x86_64.dmg"
   name 'Spotube'
