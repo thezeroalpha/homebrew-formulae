@@ -1,9 +1,9 @@
 class Slskd < Formula
   desc 'A modern client-server application for the Soulseek file sharing network.'
   homepage 'https://github.com/slskd/slskd'
-  version '0.16.22'
+  version '0.17.3'
   url "https://github.com/slskd/slskd/releases/download/#{version}/slskd-#{version}-osx-x64.zip"
-  sha256 '5ce55298173875d9fabafd94690b5f6b817be14035e41ebffca924c46d2ee2f0'
+  sha256 'f53d97c1f43e1bed194aa25899a569a58c53cd2ac893131d37c0ed3d035e00eb'
 
   def install
     bin.install 'slskd'
