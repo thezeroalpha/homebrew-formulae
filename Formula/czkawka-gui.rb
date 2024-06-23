@@ -1,9 +1,9 @@
 class CzkawkaGui < Formula
   desc 'Multi functional app to find duplicates, empty folders, similar images etc.'
   homepage 'https://github.com/qarmin/czkawka'
-  version '6.0.0'
+  version '7.0.0'
   url "https://github.com/qarmin/czkawka/releases/download/#{version}/mac_czkawka_gui"
-  sha256 "3d32505a56f1183164ba8fbd7a568ff32c433de502de0a4ce9359e1ad35158b5"
+  sha256 "125836519452e6276b5520054b9a95d07ac2645b91c8df08c2e92fadf51f5cb2"
 
   depends_on "gtk4"
   depends_on "adwaita-icon-theme"

@@ -1,9 +1,9 @@
 class Czkawka < Formula
   desc 'Multi functional app to find duplicates, empty folders, similar images etc.'
   homepage 'https://github.com/qarmin/czkawka'
-  version '6.0.0'
+  version '7.0.0'
   url "https://github.com/qarmin/czkawka/releases/download/#{version}/mac_czkawka_cli"
-  sha256 "c4c51291f5d4808b04d921b37eff7e8ea4ee5ab537a1ee4daf8efcad82d59f53"
+  sha256 "cf21886143c072d14a9987414350a3c7f53e84143d45bb627f236cb63b4a34da"
 
   def install
     system 'chmod u+x mac_czkawka_cli'
